@@ -6,7 +6,7 @@ import FetchJobs from "./FetchJobs";
 export default function JobSearch({ details }) {
   const [jobsData, setJobsData] = useState([]);
   //   const [inputValue, setInputValue] = useState("");
-
+  const [isData, setIsData] = useState(false);
   const searchJobs = async (e) => {
     e.preventDefault();
     try {
@@ -16,6 +16,7 @@ export default function JobSearch({ details }) {
       if (resp) {
         const jobs = await resp.json();
         setJobsData(jobs);
+        setIsData(true);
         console.log("all jobs---------->", jobs.data.splice(0, 50));
       }
       //   console.log("eeeeeeeeeee", e.target.value);
@@ -27,8 +28,8 @@ export default function JobSearch({ details }) {
   return (
     <>
       <Row>
-        <h3 className="center">Job search Engine</h3>
-        <hr />
+        <h1 className="center">Job search Engine</h1>
+        <br />
 
         <input
           onChange={(e) => searchJobs(e)}
@@ -39,11 +40,9 @@ export default function JobSearch({ details }) {
       </Row>
 
       <Row>
-        <br />
-        <br />
+        {isData && <h1>search results</h1>}
         {jobsData.data?.splice(0, 9).map((job) => (
           <>
-            <h1>search results</h1>
             <Col>
               <h4>Title: {job.title}</h4>
               {/* <img src={job.company_logo_url} alt={job.company_logo_url} /> */}
@@ -68,7 +67,7 @@ export default function JobSearch({ details }) {
           </>
         ))}
       </Row>
-      <h1>Latest Job Postings</h1>
+      <h3>Latest Job Postings</h3>
       <hr />
       <br />
       <FetchJobs details={details} />
