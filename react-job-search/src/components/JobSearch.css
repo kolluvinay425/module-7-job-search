@@ -1,0 +1,23 @@
+.input {
+  height: 40px;
+  margin-right: 5px;
+}
+
+.company_name {
+  text-decoration: none;
+}
+.center {
+  text-align: center;
+}
+
+/* candidate_required_location: "Europe"
+category: "Software Development"
+company_logo_url: "https://remotive.io/job/887861/logo"
+company_name: "Luko"
+description: "<p style=\"box-sizing: inherit; transition: color
+job_type: "full_time"
+publication_date: "2021-09-08T17:11:15.000Z"
+salary: "$55-80K/year"
+title: "Senior Engineer - Mobile App (React Native)"
+url: "https://remotive.io/remote-jobs/software-dev/senior-engineer-mobile-app-react-native-887861"
+_id: "613f8896c1c0b3646447b138" */
