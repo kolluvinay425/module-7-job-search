@@ -24,7 +24,10 @@ h4 {
   color: #dce0dd;
   font-family: "Times New Roman", Times, serif;
 }
-
+#body {
+  background-color: #272927;
+  min-height: 100vh;
+}
 /* candidate_required_location: "Europe"
 category: "Software Development"
 company_logo_url: "https://remotive.io/job/887861/logo"

@@ -35,7 +35,7 @@ function App() {
   };
   return (
     <Router>
-      <div className="body" style={{ background: "#272927" }}>
+      <div id="body">
         <Container>
           <Row>
             <Link className="more" to="/">

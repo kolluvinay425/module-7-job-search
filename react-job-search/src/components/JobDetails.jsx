@@ -1,12 +1,33 @@
 import React from "react";
 import "./JobSearch.css";
 import { withRouter } from "react-router";
-function JobDetails({ job, history }) {
+import { Button } from "bootstrap";
+import { connect } from "react-redux";
+import { addFouriteAction } from "../redux/actions";
+
+const mapStateToProps = (state) => ({
+  favorite: state.jobs.favorite,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  addToFav: (job) => {
+    dispatch(addFouriteAction(job));
+  },
+});
+
+function JobDetails({ job, history, addToFav, favorite }) {
   const id = () => {
     console.log(history.location.pathname); //
   };
   return (
     <div>
+      <Button
+        onClick={() => {
+          addToFav(job);
+        }}
+      >
+        add To Favorite
+      </Button>
       <img src={job.url} alt="" />
       <h1 onClick={id} className="more">
         Title :{job.title}
@@ -23,4 +44,7 @@ function JobDetails({ job, history }) {
     </div>
   );
 }
-export default withRouter(JobDetails);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(JobDetails));
