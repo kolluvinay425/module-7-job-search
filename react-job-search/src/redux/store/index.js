@@ -3,7 +3,7 @@ import favReducer from "../reducers";
 
 export const initialState = {
   jobs: {
-    favorite: [{}],
+    favorite: [],
   },
 };
 

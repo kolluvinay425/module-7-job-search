@@ -1,12 +1,12 @@
 import React from "react";
 import "./JobSearch.css";
 import { withRouter } from "react-router";
-import { Button } from "bootstrap";
-import { connect } from "react-redux";
+import { Button } from "react-bootstrap";
+import { connect, useSelector } from "react-redux";
 import { addFouriteAction } from "../redux/actions";
 
 const mapStateToProps = (state) => ({
-  favorite: state.jobs.favorite,
+  favorite: state,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -19,6 +19,9 @@ function JobDetails({ job, history, addToFav, favorite }) {
   const id = () => {
     console.log(history.location.pathname); //
   };
+  console.log({ favorite });
+  const state = useSelector((state) => state);
+  console.log({ state });
   return (
     <div>
       <Button
