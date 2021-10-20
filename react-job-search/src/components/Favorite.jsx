@@ -1,14 +1,20 @@
 import React from "react";
-
-const mapStateToProps = (job) => job;
-export default function Favorite(job) {
-  console.log("jobbbb------------>", job);
+import { connect } from "react-redux";
+import { removeFavourite } from "../redux/actions";
+// const mapStateToProps = (job) => job;
+// const mapDispatchToProps = (dispatch) => ({
+//   removeFromFav: (f) => {
+//     dispatch(removeFavourite(f));
+//   },
+// });
+function Favorite(favorite) {
+  console.log("jobbbb------------>", favorite);
   return (
-    // <div>
-    //   {jobs.favorites.map((fav) => (
-    //     <h1>{fav.company_name}</h1>
-    //   ))}
-    // </div>
-    <h1>vdsdlkn</h1>
+    <div>
+      {favorite.favorite.map((fav) => (
+        <h1 style={{ color: "white" }}>{fav.company_name}</h1>
+      ))}
+    </div>
   );
 }
+export default connect((s) => s)(Favorite);
