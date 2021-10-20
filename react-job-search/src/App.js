@@ -35,21 +35,27 @@ function App() {
   };
   return (
     <Router>
-      <Container>
-        <Row>
-          <Link className="company_name" to="/">
-            <h1>Job portal</h1>
-          </Link>
-        </Row>
+      <div className="body" style={{ background: "#272927" }}>
+        <Container>
+          <Row>
+            <Link className="more" to="/">
+              <h1 style={{ color: "#0f0ff5" }}>Job portal</h1>
+            </Link>
+          </Row>
 
-        <Route path="/" exact render={() => <JobSearch details={details} />} />
+          <Route
+            path="/"
+            exact
+            render={() => <JobSearch details={details} />}
+          />
 
-        <Route
-          path="/details"
-          exact
-          render={() => <JobDetails job={jobDetails} />}
-        />
-      </Container>
+          <Route
+            path="/:id"
+            exact
+            render={() => <JobDetails job={jobDetails} />}
+          />
+        </Container>
+      </div>
     </Router>
   );
 }

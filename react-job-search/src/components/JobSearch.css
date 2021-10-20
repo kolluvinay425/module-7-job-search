@@ -1,13 +1,28 @@
 .input {
   height: 45px;
   margin-right: 5px;
+  background-color: rgb(54, 51, 51);
+  border-color: rgb(68, 66, 66);
+  color: rgb(241, 235, 235);
+  font-family: "Times New Roman", Times, serif;
 }
 
 .company_name {
   text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
+}
+.more {
+  text-decoration: none;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
 }
 .center {
   text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+h4 {
+  color: #dce0dd;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* candidate_required_location: "Europe"
