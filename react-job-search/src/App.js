@@ -7,6 +7,7 @@ import { Route, Link } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Container, Row } from "react-bootstrap";
 import JobDetails from "./components/JobDetails";
+import Favorite from "./components/Favorite";
 {
   /* <Router>
       <Container>
@@ -54,6 +55,7 @@ function App() {
             exact
             render={() => <JobDetails job={jobDetails} />}
           />
+          <Favorite />
         </Container>
       </div>
     </Router>

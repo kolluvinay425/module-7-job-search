@@ -6,7 +6,7 @@ import { connect, useSelector } from "react-redux";
 import { addFouriteAction } from "../redux/actions";
 
 const mapStateToProps = (state) => ({
-  favorite: state,
+  favorite: state.favorite,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -20,8 +20,8 @@ function JobDetails({ job, history, addToFav, favorite }) {
     console.log(history.location.pathname); //
   };
   console.log({ favorite });
-  const state = useSelector((state) => state);
-  console.log({ state });
+  // const state = useSelector((state) => state);
+  // console.log({ state });
   return (
     <div>
       <Button
@@ -47,7 +47,4 @@ function JobDetails({ job, history, addToFav, favorite }) {
     </div>
   );
 }
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(JobDetails));
+export default connect(mapStateToProps, mapDispatchToProps)(JobDetails);

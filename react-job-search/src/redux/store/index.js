@@ -2,15 +2,14 @@ import { createStore } from "redux";
 import favReducer from "../reducers";
 
 export const initialState = {
-  jobs: {
-    favorite: [],
-  },
+  favorite: [],
 };
 
 const reduxStore = createStore(
   favReducer,
   initialState,
-  window.___REDUX_DEVTOOLS_EXTENSION__ && window.___REDUX_DEVTOOLS_EXTENSION__()
+
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 export default reduxStore;
