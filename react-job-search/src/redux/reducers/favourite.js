@@ -3,14 +3,15 @@ import { initialState } from "../store";
 
 const favReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_JOB_TO_FAVOURITES: {
-      return {
-        ...state,
+    case ADD_JOB_TO_FAVOURITES:
+      console.log({ state, payload: action.payload });
 
+      return {
         // favorite: state.favorite.concat(action.payload),
-        favorite: action.payload,
+        ...state,
+        data: [...state.data, action.payload],
       };
-    }
+
     default:
       return state;
   }
