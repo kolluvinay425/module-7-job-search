@@ -6,10 +6,9 @@ const favReducer = (state = initialState, action) => {
     case ADD_JOB_TO_FAVOURITES: {
       return {
         ...state,
-        // favorite: {
-        //   ...state.favorite,
-        favorite: state.favorite.concat(action.payload),
-        // },
+
+        // favorite: state.favorite.concat(action.payload),
+        favorite: action.payload,
       };
     }
     default:

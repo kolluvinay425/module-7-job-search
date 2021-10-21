@@ -10,11 +10,12 @@ import { removeFavourite } from "../redux/actions";
 function Favorite(favorite) {
   console.log("jobbbb------------>", favorite);
   return (
-    <div>
-      {favorite.favorite.map((fav) => (
-        <h1 style={{ color: "white" }}>{fav.company_name}</h1>
-      ))}
-    </div>
+    // <div>
+    //   <h1 style={{ color: "white" }}>
+    //     {favorite.favorite.favorite.company_name}
+    //   </h1>
+    // </div>
+    <h1>hello</h1>
   );
 }
 export default connect((s) => s)(Favorite);
