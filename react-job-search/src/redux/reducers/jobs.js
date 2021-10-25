@@ -6,8 +6,9 @@ const jobSearchReducer = (state = initialState.jobsSearch, action) => {
     case GET_ALL_JOBS:
       return {
         ...state,
-        result: action.payload.data,
+        result: action.payload,
       };
+
     default: {
       return state;
     }

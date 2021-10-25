@@ -38,6 +38,7 @@ function App() {
     <Router>
       <div id="body">
         <Container>
+          <Favorite />
           <Row>
             <Link className="more" to="/">
               <h1 style={{ color: "#0f0ff5" }}>Job portal</h1>
@@ -55,7 +56,6 @@ function App() {
             exact
             render={() => <JobDetails job={jobDetails} />}
           />
-          <Favorite />
         </Container>
       </div>
     </Router>

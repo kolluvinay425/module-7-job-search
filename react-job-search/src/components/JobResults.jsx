@@ -9,7 +9,7 @@ function JobResults({ jobsSearch, details, isData }) {
       <Row>
         {isData && <h1 className="more">search results</h1>}
 
-        {jobsSearch.results?.data?.slice(0, 9).map((job) => (
+        {jobsSearch.result?.slice(0, 9).map((job) => (
           <>
             <Col>
               <h4>Title: {job.title}</h4>

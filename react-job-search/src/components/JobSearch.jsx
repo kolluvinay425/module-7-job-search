@@ -1,49 +1,27 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
 import "./JobSearch.css";
 import FetchJobs from "./FetchJobs";
 import { searchJobs } from "../redux/actions";
-import { connect } from "react-redux";
 import JobResults from "./JobResults";
-const mapStateToProps = (state) => ({
-  results: state.jobsSearch.result,
-});
+import { useSelector, useDispatch } from "react-redux";
 
-const mapDispatchToProps = (dispatch) => ({
-  getJobs: (input) => {
-    dispatch(searchJobs(input));
-  },
-});
-
-function JobSearch({ details, getJobs, results }) {
+function JobSearch({ details }) {
   const [jobsData, setJobsData] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [isData, setIsData] = useState(false);
-  const searchJobs = async (e) => {
-    getJobs(e.target.value);
+  const [query, setQuery] = useState("");
 
-    if (getJobs) {
+  const result = useSelector((state) => state.jobsSearch.result);
+  const dispatch = useDispatch();
+
+  const searchJobss = async () => {
+    dispatch(searchJobs(query));
+
+    if (searchJobs) {
       setIsData(true);
-      console.log("search results----->", results);
+      console.log("search results----->", result);
     }
-
-    // e.preventDefault();
-    // try {
-    //   const resp = await fetch(
-    //     `https://strive-jobs-api.herokuapp.com/jobs?search=${e.target.value}`
-    //   );
-    //   if (resp) {
-    //     const jobs = await resp.json();
-    //     setJobsData(jobs);
-    //     setIsData(true);
-    //     setIsSearching(true);
-    //     console.log("all jobs---------->", jobs.data.splice(0, 50));
-    //   }
-    //   //   console.log("eeeeeeeeeee", e.target.value);
-    // } catch (error) {
-    //   console.log(error);
-    // }
   };
 
   return (
@@ -56,9 +34,9 @@ function JobSearch({ details, getJobs, results }) {
 
         <input
           onChange={(e) => {
-            searchJobs(e);
-            // console.log("search results----->", result);
+            setQuery(e.target.value);
           }}
+          onKeyDown={searchJobss}
           className="input"
           style={{}}
           type="text"
@@ -76,4 +54,4 @@ function JobSearch({ details, getJobs, results }) {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(JobSearch);
+export default JobSearch;

@@ -1,20 +1,23 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect, useSelector, useDispatch } from "react-redux";
 import { removeFavourite } from "../redux/actions";
-// const mapStateToProps = (job) => job;
-// const mapDispatchToProps = (dispatch) => ({
-//   removeFromFav: (f) => {
-//     dispatch(removeFavourite(f));
-//   },
-// });
-function Favorite(favorite) {
-  console.log("jobbbb------------>", favorite);
+function Favorite() {
+  const data = useSelector((state) => state.favorite.data);
+  const dispatch = useDispatch();
+  const removeFav = (d) => {
+    dispatch(removeFavourite(d));
+  };
+
+  console.log("-------------", data.data);
   return (
     <div>
-      {/* <h1 style={{ color: "white" }}>
-        {favorite.favorite.favorite.company_name}
-      </h1> */}
+      {data?.data?.map((d) => (
+        <h1 onClick={() => removeFav(d)} style={{ color: "white" }}>
+          {" "}
+          {d.company_name}
+        </h1>
+      ))}
     </div>
   );
 }
-export default connect((s) => s)(Favorite);
+export default Favorite;
