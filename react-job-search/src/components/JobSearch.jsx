@@ -7,8 +7,8 @@ import JobResults from "./JobResults";
 import { useSelector, useDispatch } from "react-redux";
 
 function JobSearch({ details }) {
-  const [jobsData, setJobsData] = useState([]);
-  const [isSearching, setIsSearching] = useState(false);
+  // const [jobsData, setJobsData] = useState([]);
+  // const [isSearching, setIsSearching] = useState(false);
   const [isData, setIsData] = useState(false);
   const [query, setQuery] = useState("");
 

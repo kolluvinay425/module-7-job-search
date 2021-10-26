@@ -31,7 +31,7 @@ export const addToFavourite = (company_name) => {
           type: ADD_JOB_TO_FAVOURITES,
           payload: job,
         });
-        console.log("one perticular job---------->", job);
+        console.log("one particular job---------->", job);
       }
       //   console.log("eeeeeeeeeee", e.target.value);
     } catch (error) {

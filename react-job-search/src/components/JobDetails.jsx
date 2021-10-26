@@ -23,31 +23,12 @@ import { useDispatch } from "react-redux";
 //   }
 // );
 
-function JobDetails({ job, history, favorite }) {
-  // const isFavourite = useSelector((state) =>
-  //   state.favorite.data.find((t) => t._id !== job._id)
-  // );
-  // const toggle = () => {
-  //   if (isFavourite === undefined) {
-  //     addToFav({ job });
-  //   } else {
-  //     removeFromFav(job);
-  //   }
-  //   console.log("sateeeeee", isFavourite);
-  // };
-  // const isFavourite = useSelector(
-  //   (state) => state
-  // );
+function JobDetails({ job }) {
   const dispatch = useDispatch();
   const getJob = async () => {
     dispatch(addToFavourite(job.company_name));
   };
-  // const id = () => {
-  //   console.log(history.location.pathname); //
-  // };
-  console.log({ favorite });
-  // const state = useSelector((state) => state);
-  // console.log({ state });
+
   return (
     <div>
       <Button onClick={() => getJob()}>add To Favorite</Button>

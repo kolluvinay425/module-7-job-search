@@ -21,7 +21,7 @@ const persistConfig = {
   storage: localStorage,
   transforms: [
     encryptTransform({
-      secretKey: process.env.REACT_APP_SECRET_KEY,
+      secretKey: "vinay",
       // the secret key will be used for encrypt/decrypt the stringified version of your redux
       // store saved in the engine of choice
       onError: (error) => {
